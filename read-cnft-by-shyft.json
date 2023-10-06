@@ -1,0 +1,57 @@
+{
+  "name": "Compressed NFT #1",
+  "symbol": "CNFT",
+  "royalty": 5,
+  "image_uri": "https://gateway.pinata.cloud/ipfs/QmXdkz86pnGN5DyJEo1J9tmFyz5gRDXZHy67dbcxxCPbEk",
+  "cached_image_uri": "https://gateway.pinata.cloud/ipfs/QmXdkz86pnGN5DyJEo1J9tmFyz5gRDXZHy67dbcxxCPbEk",
+  "animation_url": "",
+  "cached_animation_url": "",
+  "metadata_uri": "https://gateway.pinata.cloud/ipfs/QmYmUb5MHZwYovnQg9qANTJUi7R8VaE5CetfssczaSWn5K",
+  "description": "Subtle details.",
+  "mint": "J2tEdztaZdwyiXYvwXTyDVBEXwLSoPVwykWmFDnvRQUK",
+  "owner": "7fbPDP3jAbkEVf7QAAxhBKHcbfLPttPkyXJNNkv62Xvd",
+  "update_authority": "7THBB82jZWKL7YofPgRuHymdWYkBWfcxx3zByh1pQEGu",
+  "creators": [
+    {
+      "address": "5KW2twHzRsAaiLeEx4zYNV35CV2hRrZGw7NYbwMfL4a2",
+      "share": 80,
+      "verified": false
+    },
+    {
+      "address": "3yTKSCKoDcjBFpbgxyJUh4cM1NG77gFXBimkVBx2hKrf",
+      "share": 20,
+      "verified": false
+    }
+  ],
+  "collection": {
+    "address": "9KD71uAN9HTPovRoYq7Zk7hJVacCQh7cPNXvw89Vsm1g",
+    "verified": true
+  },
+  "attributes": {
+    "Weather": "Cloudy",
+    "Dogs": 2
+  },
+  "attributes_array": [
+    {
+      "trait_type": "Weather",
+      "value": "Cloudy"
+    },
+    {
+      "trait_type": "Dogs",
+      "value": 2
+    }
+  ],
+  "files": [
+    {
+      "uri": "https://gateway.pinata.cloud/ipfs/QmXdkz86pnGN5DyJEo1J9tmFyz5gRDXZHy67dbcxxCPbEk",
+      "type": "image/png"
+    }
+  ],
+  "external_url": "",
+  "is_loaded_metadata": true,
+  "primary_sale_happened": true,
+  "is_mutable": true,
+  "token_standard": "NonFungible",
+  "is_compressed": true,
+  "merkle_tree": "X5YZxkn4MmXqXwfJfmGvfucY2Ch217K59BURRVaHB5U"
+}
