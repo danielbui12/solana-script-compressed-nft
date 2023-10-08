@@ -1,6 +1,6 @@
 import axios from 'axios';
-
-const SHYFT_API_KEY = 'W9YkroMlK1bO47r0'
+import dotenv from 'dotenv';
+dotenv.config()
 
 axios.post("https://api.shyft.to/sol/v1/marketplace/create", {
   "network": "devnet",
@@ -10,7 +10,7 @@ axios.post("https://api.shyft.to/sol/v1/marketplace/create", {
   "creator_wallet": "7fbPDP3jAbkEVf7QAAxhBKHcbfLPttPkyXJNNkv62Xvd"
 }, {
   headers: {
-    "x-api-key": SHYFT_API_KEY
+    "x-api-key": process.env.SHYFT_API_KEY as string
   }
 })
   .then(result => console.log(result))

@@ -1,7 +1,7 @@
 {
-  "blockTime": 1696553377,
+  "blockTime": 1696746177,
   "meta": {
-    "computeUnitsConsumed": 75974,
+    "computeUnitsConsumed": 56364,
     "err": null,
     "fee": 6600,
     "innerInstructions": [
@@ -10,34 +10,21 @@
         "instructions": [
           {
             "accounts": [
-              "Aq6wejA3BtQe7mjY18Fvj2gyiZc4qGUyYoTNjNUw8e33",
-              "7fbPDP3jAbkEVf7QAAxhBKHcbfLPttPkyXJNNkv62Xvd",
-              "9KD71uAN9HTPovRoYq7Zk7hJVacCQh7cPNXvw89Vsm1g",
-              "4ewWZC5gT6TGpm5LZNDs9wVonfUT2q5PP5sc9kVbwMAK"
+              "2hEaLERcyKXfEy1XK18KeP5Cmaox9szwJVZcvo6ayE19",
+              "9GrT9inS9LCiCFdiDabmttmo6427ZnEpzK2nb6UUpvPL",
+              "noopb9bkMVfRPU8AsbpTUg8AQkHtKwMYZiFUjNRtMmV",
+              "ttGKDo18vgPX8f79qT3st9fVJBeTrTkmLtMF9B7Gk8b",
+              "56Y3pDCbSwuQUxY2PVY2RrAqLsB5JQpAvNzjq6MKiWyJ",
+              "5j1F5STowL3EaY9D7LiWx4v2P8VQVG9UqRiSkReQYhme",
+              "BEuWQdFoSEznXBegrhxE32nUFBdf6EnpQmJK53tgwRWv"
             ],
-            "data": "Taq9XHy9i7Aw",
-            "programId": "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s",
-            "stackHeight": 2
-          },
-          {
-            "accounts": [],
-            "data": "2GJh7oUmkZKoGky9upydCDyeu5XP49PvkFFFohbwVZNcxoussq3LPoSWKi5YCdupKTp5WhvY5MNX5QECPAV47rby7dXD6MqNM5xZJ7gkXEseYkEVY6Uvwr4oXUi38Qic9aQXpw8NXZ2hhJKrMwEt8BCNwB1PdRas49bkSt4xtvrGCDzCvvmpgfzgWXNddtW7sBpwtdzZDfvT3duimoJjKD2hnJednhce5LiVP4n4C3A8g5Jwn7tgxTDc6qBowE58xdVVP5XBJ9qdH6HEZ8XCYGmcZ1jwA",
-            "programId": "noopb9bkMVfRPU8AsbpTUg8AQkHtKwMYZiFUjNRtMmV",
-            "stackHeight": 2
-          },
-          {
-            "accounts": [
-              "X5YZxkn4MmXqXwfJfmGvfucY2Ch217K59BURRVaHB5U",
-              "7THBB82jZWKL7YofPgRuHymdWYkBWfcxx3zByh1pQEGu",
-              "noopb9bkMVfRPU8AsbpTUg8AQkHtKwMYZiFUjNRtMmV"
-            ],
-            "data": "8RkZ9BWdS73D3RiaTfZgBRCBijDKs1N1TUVo9Hb9LQdhVF2HKyaJreG",
+            "data": "6sZQ7ZizDXiak9sePdDRjxtFQNCVCscDdY2Ntosn2f47qbdsV8jcjUZTcZopGJnLJTY387pUf8b31LS2jcKHtsAPNZi3oz21jWsqZGP1EEW8mU1Mh4ZyMHtHt4yrf5WjKqcrPQgirPgHi9DNWo43",
             "programId": "cmtDvXumGCrqC1Age74AVPhSRVXJMd8PJS91L8KbNCK",
             "stackHeight": 2
           },
           {
             "accounts": [],
-            "data": "112oC3RXwoH3hwEvqWCWZe9vb1nk1EeDbkyZB7MF9VixQbJs9PtV7wwvWx4jAGvpHKZSiwzPCfAp5GzNePeCSnPbUzDLWAmNR1csegNHEXMxpW9TpKp9p411UQLSNhMPC5NeGMgoiU8RPaxpKn7bx3dQ8Ksiu9ose1KGJjtttTAEoCd7R1UjC9HCzfwvXEr7XYc2bnmZCoNfY7h4q2rUikBYLiD7iLz4ko9woE2euTzeMJfM4zbdDbnFN12mv3WNJnXJv5mG1Cdgu3rtgaPEBF8W7khSdmvDNsxuwcGNCJTQRdA5xHLX1LohmiJRvMVyGnXw3vBpZ8tC3dgj6BQV4cEVUBQ54HriqKiGqHXzXvPtemx1KUyiVdeJbm2qf6FCkqp3MCqe59YTtQ67c7fWzzbZiGfxDkiUMcsmy4Uoc4rPQWajxoum13JDwj2JKcSjDYW7tKpVpay6f2FuJY1Yfoq31UFVsPDTCwhTT8QEszU9peT9vwHDTYxQU5STN5WocggNb7REZjDY1LDzXdJ1oJCyAyDBDSq3hu2ycZUmuGmpKmATQgcxYqsShUHQZen9VvX9udmLWHvFPPcYFH51jRynFchKYMuCRegj9tqQG1as8wTNmoHs6gKszKegV5qAk4ZGNjuTrsni7B8qumXcB7E5ssNwuDtb9kqgXQHJiKnTmw1FMcscst9fosbMjS3Qa7daCyFnE9N2EXuene4gyMGXzAG4SS2f8z9ia7VEKA8Qd4eprSYN2YR5iwMjv2vuEgZQjDAAFNsZRLNGpzgakf8F8YoR5bRooEP27",
+            "data": "116sHCqGr2WWjWRvJxHvwm1WtsogndJFeqzvyNFpfK8Sn4oYmCjYqxMbRsLh7hVPCroVCfbTzz17aHG9Vv1U8ZSXpDuDmVksuD36LWZ8n7ypvY6i6npcyPkc23mnCVLixbDi9qVfUoVhpPRTMtVZXfXHwqiD47w5nm7Pk41aSnZdGriu5tC8xT9K3pNtNhRvemQtfuMc5civf1jgKyHPKLBJD3kXxAwXaD1hQCaBuvhuwEaZgJLTCXSm44gDspbrctL1Yec3Whk1VPKDzznJmpQxc7ZdCQpLMkyTeLVLmrJihgB6UCRDZURDu9tXMiva28XF5tD8bnBQWDZD4ut87o3awPFfDmr44ReKx8L9r1HnU71ccfamgLXb2PQQhqvAH2tLc8Bc5ZuHJTbr6uyo9PrCgT3bJgXbvA77fWciFKyhMeenf6smMMvV28zAJxTz5VwF8wioeTQVwYn17MeQXUT7Wsdrz7iHpkyfLiteYTygyJeGHTSTCUYy2qNoYhsq1Ry4GR4cgifQwuamW9nMRQNbiLQN1CwnKtZUjfBmoopYqZRJWP16vDQUPj1NVyVa6XaWpusdpXXWMWpazk5FsMW3R5vaN1Wogj2w5Gt5KvuZzZZbTKfGhUwyrci2YpHqxvi5tdzymnPtfPuRdqy8gq12kBnEC3cC4uq8KC3EibdKT7vBPXVdzYgd3H5WGpHyV6rKb1XNMw7oBssMRspz8N7ndU3d7NfFiNZeNMMigzjLeqFaYtc3ZfL3uiiih8e62xGzYDozPJ9h8PhM5Vzz6iHn5jL6ptqXQk9x3",
             "programId": "noopb9bkMVfRPU8AsbpTUg8AQkHtKwMYZiFUjNRtMmV",
             "stackHeight": 3
           }
@@ -50,54 +37,56 @@
       "Program ComputeBudget111111111111111111111111111111 invoke [1]",
       "Program ComputeBudget111111111111111111111111111111 success",
       "Program BGUMAp9Gq7iTEuizy4pqaxsTyUCBK68MDfK752saRPUY invoke [1]",
-      "Program log: Instruction: MintToCollectionV1",
-      "Program metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s invoke [2]",
-      "Program log: IX: Bubblegum Program Set Collection Size",
-      "Program metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s consumed 17780 of 167450 compute units",
-      "Program metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s success",
-      "Program noopb9bkMVfRPU8AsbpTUg8AQkHtKwMYZiFUjNRtMmV invoke [2]",
-      "Program noopb9bkMVfRPU8AsbpTUg8AQkHtKwMYZiFUjNRtMmV consumed 97 of 139355 compute units",
-      "Program noopb9bkMVfRPU8AsbpTUg8AQkHtKwMYZiFUjNRtMmV success",
+      "Program log: Instruction: Burn",
       "Program cmtDvXumGCrqC1Age74AVPhSRVXJMd8PJS91L8KbNCK invoke [2]",
-      "Program log: Instruction: Append",
+      "Program log: Instruction: ReplaceLeaf",
+      "Program log: Attempting to fill in proof",
+      "Program consumption: 156498 units remaining",
+      "Program log: Active Index: 52",
+      "Program log: Rightmost Index: 52",
+      "Program log: Buffer Size: 53",
+      "Program log: Leaf Index: 32",
+      "Program log: Fast-forwarding proof, starting index 52",
+      "Program consumption: 153550 units remaining",
+      "Program consumption: 153446 units remaining",
       "Program noopb9bkMVfRPU8AsbpTUg8AQkHtKwMYZiFUjNRtMmV invoke [3]",
-      "Program noopb9bkMVfRPU8AsbpTUg8AQkHtKwMYZiFUjNRtMmV consumed 97 of 126279 compute units",
+      "Program noopb9bkMVfRPU8AsbpTUg8AQkHtKwMYZiFUjNRtMmV consumed 97 of 145157 compute units",
       "Program noopb9bkMVfRPU8AsbpTUg8AQkHtKwMYZiFUjNRtMmV success",
-      "Program cmtDvXumGCrqC1Age74AVPhSRVXJMd8PJS91L8KbNCK consumed 9014 of 134849 compute units",
+      "Program cmtDvXumGCrqC1Age74AVPhSRVXJMd8PJS91L8KbNCK consumed 32809 of 177365 compute units",
       "Program cmtDvXumGCrqC1Age74AVPhSRVXJMd8PJS91L8KbNCK success",
-      "Program BGUMAp9Gq7iTEuizy4pqaxsTyUCBK68MDfK752saRPUY consumed 75974 of 200000 compute units",
+      "Program BGUMAp9Gq7iTEuizy4pqaxsTyUCBK68MDfK752saRPUY consumed 56364 of 200000 compute units",
       "Program BGUMAp9Gq7iTEuizy4pqaxsTyUCBK68MDfK752saRPUY success"
     ],
     "postBalances": [
-      18988130840,
-      1559040,
-      5616720,
-      1134034560,
+      23916536920,
+      677904000,
       1,
       0,
-      2853600,
-      1461600,
+      0,
+      1559040,
+      0,
       1141440,
       1141440,
       1,
+      2294193640,
       1141440,
-      1141440
+      0
     ],
     "postTokenBalances": [],
     "preBalances": [
-      18988137440,
-      1559040,
-      5616720,
-      1134034560,
+      23916543520,
+      677904000,
       1,
       0,
-      2853600,
-      1461600,
+      0,
+      1559040,
+      0,
       1141440,
       1141440,
       1,
+      2294193640,
       1141440,
-      1141440
+      0
     ],
     "preTokenBalances": [],
     "rewards": [],
@@ -105,7 +94,7 @@
       "Ok": null
     }
   },
-  "slot": 249016365,
+  "slot": 249538859,
   "transaction": {
     "message": {
       "accountKeys": [
@@ -116,19 +105,7 @@
           "writable": true
         },
         {
-          "pubkey": "7THBB82jZWKL7YofPgRuHymdWYkBWfcxx3zByh1pQEGu",
-          "signer": false,
-          "source": "transaction",
-          "writable": true
-        },
-        {
-          "pubkey": "Aq6wejA3BtQe7mjY18Fvj2gyiZc4qGUyYoTNjNUw8e33",
-          "signer": false,
-          "source": "transaction",
-          "writable": true
-        },
-        {
-          "pubkey": "X5YZxkn4MmXqXwfJfmGvfucY2Ch217K59BURRVaHB5U",
+          "pubkey": "2hEaLERcyKXfEy1XK18KeP5Cmaox9szwJVZcvo6ayE19",
           "signer": false,
           "source": "transaction",
           "writable": true
@@ -140,19 +117,25 @@
           "writable": false
         },
         {
-          "pubkey": "4ewWZC5gT6TGpm5LZNDs9wVonfUT2q5PP5sc9kVbwMAK",
+          "pubkey": "56Y3pDCbSwuQUxY2PVY2RrAqLsB5JQpAvNzjq6MKiWyJ",
           "signer": false,
           "source": "transaction",
           "writable": false
         },
         {
-          "pubkey": "5Cb8AEUVz72tVSKpMnkWV8xD5Qot7Tt7rKbJyLwiWjfL",
+          "pubkey": "5j1F5STowL3EaY9D7LiWx4v2P8VQVG9UqRiSkReQYhme",
           "signer": false,
           "source": "transaction",
           "writable": false
         },
         {
-          "pubkey": "9KD71uAN9HTPovRoYq7Zk7hJVacCQh7cPNXvw89Vsm1g",
+          "pubkey": "9GrT9inS9LCiCFdiDabmttmo6427ZnEpzK2nb6UUpvPL",
+          "signer": false,
+          "source": "transaction",
+          "writable": false
+        },
+        {
+          "pubkey": "BEuWQdFoSEznXBegrhxE32nUFBdf6EnpQmJK53tgwRWv",
           "signer": false,
           "source": "transaction",
           "writable": false
@@ -176,13 +159,19 @@
           "writable": false
         },
         {
-          "pubkey": "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s",
+          "pubkey": "Ej3EiTpzhfiUVBXuwcUdBhGySXvge3Hbsa6LGQXQ36mE",
           "signer": false,
           "source": "transaction",
           "writable": false
         },
         {
           "pubkey": "noopb9bkMVfRPU8AsbpTUg8AQkHtKwMYZiFUjNRtMmV",
+          "signer": false,
+          "source": "transaction",
+          "writable": false
+        },
+        {
+          "pubkey": "ttGKDo18vgPX8f79qT3st9fVJBeTrTkmLtMF9B7Gk8b",
           "signer": false,
           "source": "transaction",
           "writable": false
@@ -203,32 +192,27 @@
         },
         {
           "accounts": [
-            "7THBB82jZWKL7YofPgRuHymdWYkBWfcxx3zByh1pQEGu",
+            "9GrT9inS9LCiCFdiDabmttmo6427ZnEpzK2nb6UUpvPL",
             "7fbPDP3jAbkEVf7QAAxhBKHcbfLPttPkyXJNNkv62Xvd",
-            "7fbPDP3jAbkEVf7QAAxhBKHcbfLPttPkyXJNNkv62Xvd",
-            "X5YZxkn4MmXqXwfJfmGvfucY2Ch217K59BURRVaHB5U",
-            "7fbPDP3jAbkEVf7QAAxhBKHcbfLPttPkyXJNNkv62Xvd",
-            "7fbPDP3jAbkEVf7QAAxhBKHcbfLPttPkyXJNNkv62Xvd",
-            "7fbPDP3jAbkEVf7QAAxhBKHcbfLPttPkyXJNNkv62Xvd",
-            "BGUMAp9Gq7iTEuizy4pqaxsTyUCBK68MDfK752saRPUY",
-            "9KD71uAN9HTPovRoYq7Zk7hJVacCQh7cPNXvw89Vsm1g",
-            "Aq6wejA3BtQe7mjY18Fvj2gyiZc4qGUyYoTNjNUw8e33",
-            "5Cb8AEUVz72tVSKpMnkWV8xD5Qot7Tt7rKbJyLwiWjfL",
-            "4ewWZC5gT6TGpm5LZNDs9wVonfUT2q5PP5sc9kVbwMAK",
+            "Ej3EiTpzhfiUVBXuwcUdBhGySXvge3Hbsa6LGQXQ36mE",
+            "2hEaLERcyKXfEy1XK18KeP5Cmaox9szwJVZcvo6ayE19",
             "noopb9bkMVfRPU8AsbpTUg8AQkHtKwMYZiFUjNRtMmV",
             "cmtDvXumGCrqC1Age74AVPhSRVXJMd8PJS91L8KbNCK",
-            "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s",
-            "11111111111111111111111111111111"
+            "11111111111111111111111111111111",
+            "ttGKDo18vgPX8f79qT3st9fVJBeTrTkmLtMF9B7Gk8b",
+            "56Y3pDCbSwuQUxY2PVY2RrAqLsB5JQpAvNzjq6MKiWyJ",
+            "5j1F5STowL3EaY9D7LiWx4v2P8VQVG9UqRiSkReQYhme",
+            "BEuWQdFoSEznXBegrhxE32nUFBdf6EnpQmJK53tgwRWv"
           ],
-          "data": "9kq26xW4sP8Q2tcWgoSYQTaRypfJk6uifVwDTSe4yPwkwz6pePaKxFm1wo1CYuodds3P2aGVzHWDgjANyCrARYVzw13vCTJztFg2nLZoH6dM7sh9jUgAR61BRgnJGBJRUqowjRSXHQKc2rUamv8cvt8sSjALnNgVzPPwcFeKDFAMYedzuHohuciC6savDSsvJPQwPwjiVnFyFvexr8byHvbXpXrkFBocfBvAvbSYQCdkRazkVwLwAsDA8Jq66Cb22n8FGS6qSpFwmZ68Qzqj1pwrnPK6e5P5GSgqjds9m5xHTDkCCBZcSaQwvWCLYQh94Dd5",
+          "data": "3U3VSPDpgJxvFFjYTQFxjtJAUbVPjjVKQanFnPCtWmjYLoXmpwQfyYoBCyuiKsMiFs5VGpe9RHaxz65QWdFVHPGTa6pGqZdRCVinCjHHHrd8cAnPdgFY1rnTFDKxUqhL7Mc2hxQmkyNBStK2Cc3utm1T7sKEUnT",
           "programId": "BGUMAp9Gq7iTEuizy4pqaxsTyUCBK68MDfK752saRPUY",
           "stackHeight": null
         }
       ],
-      "recentBlockhash": "3zzKL2QLwHrDhUZnhKAfmoUhhAB33HbmJm8N9SYcftcg"
+      "recentBlockhash": "7NscRFPmc6B6BEVUT6wtcuZa2f6QW9JDpVkJHCB6J3Et"
     },
     "signatures": [
-      "53wZLfGptKanot4yLGvcWQLRxS3JLFTccoozGzSEG1XVgtE1rNW7RLnRAQsuepxtwQFviLxZ479ZBNi2vXvkqodU"
+      "9KFTkxtoHx9B9v9gXNZa2zcwFtid3r1gsBANzyW8j53enJbKxCdsotwn7XvfK6S4WYUX4AuDdCxASjDMfSKy2bw"
     ]
   }
 }
