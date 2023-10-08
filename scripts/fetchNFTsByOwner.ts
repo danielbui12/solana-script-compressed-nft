@@ -53,35 +53,37 @@ dotenv.config();
     })
     .then(res => {
       console.log("Total assets returned:", res.total);
+      console.log(JSON.stringify(res));
+      
+      // // loop over each of the asset items in the collection
+      // res.items?.map(asset => {
+      //   // only show compressed nft assets
+      //   // if (!asset.compression.compressed) return;
+      //   // console.log(asset);
+        
+      //   // display a spacer between each of the assets
+      //   console.log("\n===============================================");
 
-      // loop over each of the asset items in the collection
-      res.items?.map(asset => {
-        // only show compressed nft assets
-        if (!asset.compression.compressed) return;
+      //   // locally save the addresses for the demo
+      //   // savePublicKeyToFile("assetIdTestAddress", new PublicKey(asset.id));
 
-        // display a spacer between each of the assets
-        console.log("\n===============================================");
+      //   // extra useful info
+      //   console.log("assetId:", asset.id);
 
-        // locally save the addresses for the demo
-        savePublicKeyToFile("assetIdTestAddress", new PublicKey(asset.id));
+      //   // view the ownership info for the given asset
+      //   console.log("ownership:", asset.ownership);
 
-        // extra useful info
-        console.log("assetId:", asset.id);
+      //   // metadata json data (auto fetched thanks to the Metaplex Read API)
+      //   // console.log("metadata:", asset.content.metadata);
 
-        // view the ownership info for the given asset
-        console.log("ownership:", asset.ownership);
+      //   // view the compression specific data for the given asset
+      //   console.log("compression:", asset.compression);
 
-        // metadata json data (auto fetched thanks to the Metaplex Read API)
-        // console.log("metadata:", asset.content.metadata);
-
-        // view the compression specific data for the given asset
-        console.log("compression:", asset.compression);
-
-        // if (asset.compression.compressed) {
-        //   console.log("==> This NFT is compressed! <===");
-        //   console.log("\tleaf_id:", asset.compression.leaf_id);
-        // } else console.log("==> NFT is NOT compressed! <===");
-      });
+      //   // if (asset.compression.compressed) {
+      //   //   console.log("==> This NFT is compressed! <===");
+      //   //   console.log("\tleaf_id:", asset.compression.leaf_id);
+      //   // } else console.log("==> NFT is NOT compressed! <===");
+      // });
     });
 
   //////////////////////////////////////////////////////////////////////////////

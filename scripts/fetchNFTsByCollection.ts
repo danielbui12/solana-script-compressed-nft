@@ -52,20 +52,21 @@ dotenv.config();
     })
     .then(res => {
       console.log("Total assets returned:", res.total);
+      console.log(JSON.stringify(res.items));
+      
+      // // loop over each of the asset items in the collection
+      // res.items?.map(asset => {
+      //   // display a spacer between each of the assets
+      //   // console.log("\n===============================================");
 
-      // loop over each of the asset items in the collection
-      res.items?.map(asset => {
-        // display a spacer between each of the assets
-        console.log("\n===============================================");
+      //   // print the entire asset record to the console
+      //   // console.log(asset);
 
-        // print the entire asset record to the console
-        // console.log(asset);
-
-        // print some useful info
-        console.dir(asset, null);
-        // console.log("assetId:", asset.id);
-        // console.log("ownership:", asset.ownership);
-        // console.log("compression:", asset.compression);
-      });
+      //   // print some useful info
+      //   console.dir(asset, null);
+      //   // console.log("assetId:", asset.id);
+      //   // console.log("ownership:", asset.ownership);
+      //   // console.log("compression:", asset.compression);
+      // });
     });
 })();

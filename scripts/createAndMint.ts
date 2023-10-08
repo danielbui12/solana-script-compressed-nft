@@ -97,7 +97,7 @@ let initBalance: number, balance: number;
       name: "Super Sweet NFT Collection",
       symbol: "SSNC",
       // specific json metadata for the collection
-      uri: "https://supersweetcollection.notarealurl/collection.json",
+      uri: "https://bafkreiaqzdzaykkqh7coa4lo3ag7apixn7akutysp6xglgo7i77npizxja.ipfs.nftstorage.link/",
       sellerFeeBasisPoints: 100,
       creators: [
         {
