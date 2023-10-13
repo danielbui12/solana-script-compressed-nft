@@ -43,12 +43,12 @@ dotenv.config();
 
   await connection
     .getAssetsByGroup({
-      groupKey: "collection",
-      groupValue: "9KD71uAN9HTPovRoYq7Zk7hJVacCQh7cPNXvw89Vsm1g",
-      sortBy: {
-        sortBy: "recent_action",
-        sortDirection: "asc",
-      },
+      "groupKey": "collection",
+      "groupValue": "9KD71uAN9HTPovRoYq7Zk7hJVacCQh7cPNXvw89Vsm1g",
+      "sortBy": {
+        "sortBy": "recent_action",
+        "sortDirection": "asc"
+      }
     })
     .then(res => {
       console.log("Total assets returned:", res.total);

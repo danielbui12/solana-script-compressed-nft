@@ -1,0 +1,48 @@
+{
+  "success": true,
+  "message": "NFT metadata",
+  "result": {
+    "name": "Lisa Anniversary",
+    "symbol": "LA",
+    "royalty": 5,
+    "image_uri": "https://nftstorage.link/ipfs/bafkreiaxwdocoborifqf333q5by47mntqfkwk35vuip6qoy6pgjmrouvpa",
+    "cached_image_uri": "https://nftstorage.link/ipfs/bafkreiaxwdocoborifqf333q5by47mntqfkwk35vuip6qoy6pgjmrouvpa",
+    "animation_url": "",
+    "cached_animation_url": "",
+    "metadata_uri": "https://nftstorage.link/ipfs/bafkreiaqzdzaykkqh7coa4lo3ag7apixn7akutysp6xglgo7i77npizxja",
+    "description": "1 year anniversary album",
+    "mint": "9KD71uAN9HTPovRoYq7Zk7hJVacCQh7cPNXvw89Vsm1g",
+    "owner": "7fbPDP3jAbkEVf7QAAxhBKHcbfLPttPkyXJNNkv62Xvd",
+    "update_authority": "7fbPDP3jAbkEVf7QAAxhBKHcbfLPttPkyXJNNkv62Xvd",
+    "creators": [
+      {
+        "address": "7fbPDP3jAbkEVf7QAAxhBKHcbfLPttPkyXJNNkv62Xvd",
+        "share": 100,
+        "verified": true
+      }
+    ],
+    "collection": {},
+    "attributes": {
+      "owner": "Lisa"
+    },
+    "attributes_array": [
+      {
+        "trait_type": "owner",
+        "value": "Lisa"
+      }
+    ],
+    "files": [
+      {
+        "uri": "https://nftstorage.link/ipfs/bafkreiaxwdocoborifqf333q5by47mntqfkwk35vuip6qoy6pgjmrouvpa",
+        "type": "application/octet-stream"
+      }
+    ],
+    "external_url": "https://mindforgex.relipa.vn/channel/lalisa/album/lisa-aniversary",
+    "is_loaded_metadata": true,
+    "primary_sale_happened": false,
+    "is_mutable": true,
+    "token_standard": "NonFungible",
+    "is_compressed": false,
+    "merkle_tree": ""
+  }
+}

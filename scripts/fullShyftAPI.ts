@@ -22,8 +22,14 @@ const merkleTree = 'X5YZxkn4MmXqXwfJfmGvfucY2Ch217K59BURRVaHB5U';
 const marketAddress = '4GEPUbtducdgVXqQJvExv299aivfXyRisyANPEcXQBpn';
 const sampleNFTAddress = "J2tEdztaZdwyiXYvwXTyDVBEXwLSoPVwykWmFDnvRQUK";
 
+const axiosInstance = axios.create({
+  headers: {
+    "x-api-key": SHYFT_API_KEY
+  },
+  baseURL: "https://api.shyft.to"
+})
 async function createMerkleTree() {
-  const response = await axios.post("https://api.shyft.to/sol/v1/nft/compressed/create_tree", {
+  const response = await axiosInstance.post("/sol/v1/nft/compressed/create_tree", {
     network,
     wallet_address: YOUR_WALLET_ADDRESS,
     max_depth_size_pair: {
@@ -31,10 +37,6 @@ async function createMerkleTree() {
       max_buffer_size: 64
     },
     canopy_depth: 11
-  }, {
-    headers: {
-      "x-api-key": SHYFT_API_KEY
-    }
   });
   console.dir(response.data, { depth: null })
 }
@@ -69,14 +71,9 @@ async function mintCollectionNFT() {
   formdata.append('image', blob, 'images.jpg');
   formdata.append('fee_payer', YOUR_WALLET_ADDRESS);
 
-  const response = await axios.post(
-    'https://api.shyft.to/sol/v2/nft/create',
+  const response = await axiosInstance.post(
+    '/sol/v2/nft/create',
     formdata,
-    {
-      headers: {
-        'x-api-key': SHYFT_API_KEY,
-      },
-    },
   );
   console.dir(response.data, { depth: null });
 }
@@ -85,7 +82,7 @@ async function mintCollectionNFT() {
  * @api: https://docs.shyft.to/start-hacking/nft/compressed-nft#mint-compressed-nft
  */
 async function mintCompressedNFT() {
-  const response = await axios.post("https://api.shyft.to/sol/v1/nft/compressed/mint", 
+  const response = await axiosInstance.post("/sol/v1/nft/compressed/mint", 
   {
     network,
     creator_wallet: YOUR_WALLET_ADDRESS,
@@ -98,11 +95,6 @@ async function mintCompressedNFT() {
     "is_mutable": true,
     "receiver": YOUR_WALLET_ADDRESS,
     "fee_payer": YOUR_WALLET_ADDRESS
-  },
-   {
-    headers: {
-      "x-api-key": SHYFT_API_KEY
-    }
   });
 
   console.dir(response.data, { depth: null })
@@ -113,12 +105,8 @@ async function mintCompressedNFT() {
  * 
  */
 const fetchNFTsByWallet = () => {
-  const nftUrl = `https://api.shyft.to/sol/v1/nft/compressed/read_all?network=${network}&wallet_address=${YOUR_WALLET_ADDRESS}&collection=${collectionAddress}`;
-  axios.get(nftUrl, {
-    headers: {
-      'x-api-key': SHYFT_API_KEY,
-    }
-  })
+  const nftUrl = `/sol/v1/nft/compressed/read_all?network=${network}&wallet_address=${YOUR_WALLET_ADDRESS}&collection=${collectionAddress}`;
+  axiosInstance.get(nftUrl)
     .then((res) => {
       console.log(res.data);
     })
@@ -130,18 +118,13 @@ const fetchNFTsByWallet = () => {
 
 
 async function sellMarketItem() {
-  axios.post("https://api.shyft.to/sol/v1/marketplace/list", 
+  axiosInstance.post("/sol/v1/marketplace/list", 
   {
     "network":"devnet",
     "marketplace_address":"3y4rUzcCRZH4TstRJGYmUUKuod8hd4Rvu2Fnf2FhQoY4",
     "nft_address":"AhEq7ns6rkGayZryhNrfWks7Tb9PT7WR3HPpgVz5T3yQ",
     "price":2,
     "seller_wallet":"7fbPDP3jAbkEVf7QAAxhBKHcbfLPttPkyXJNNkv62Xvd"
-  },
-  {
-    headers: {
-      'x-api-key': SHYFT_API_KEY,
-    }
   })
     .then((res) => {
       console.log(res.data);
@@ -153,8 +136,22 @@ async function sellMarketItem() {
   
 }
 
+async function getNFT(address: string) {
+  const res = await axiosInstance.get(`/sol/v1/nft/read`, {
+    params: {
+      network: network,
+      token_address: address,
+    },
+  });
+
+  if (res.data) {
+    console.log(JSON.stringify(res.data));
+  }
+}
+
 // createMerkleTree();
 // mintCollectionNFT();
 // mintCompressedNFT();
 // fetchNFTsByWallet();
-sellMarketItem();
+// sellMarketItem();
+getNFT("9KD71uAN9HTPovRoYq7Zk7hJVacCQh7cPNXvw89Vsm1g");
