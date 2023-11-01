@@ -16,7 +16,7 @@ describe("cNFT Vault", () => {
     [Buffer.from("cNFT-vault", "utf8")],
     program.programId
   );
-  console.log("vaultPDA", vaultPDA);
+  console.log("vaultPDA", vaultPDA); // HtSoqidkGxS3CQExpsPFHtK4Hbz4xfMi9mWaLXoRujpK
 
   // before(async () => { 
   //   let fromAirdropSignature = await connection.requestAirdrop(
