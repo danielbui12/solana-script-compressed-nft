@@ -5,6 +5,8 @@ import {
   Transaction,
   sendAndConfirmTransaction,
   TransactionInstruction,
+  TransactionResponse,
+  VersionedTransactionResponse,
 } from "@solana/web3.js";
 import { createAccount, createMint, mintTo, TOKEN_PROGRAM_ID } from "@solana/spl-token";
 import {
@@ -12,14 +14,15 @@ import {
   createAllocTreeIx,
   ValidDepthSizePair,
   SPL_NOOP_PROGRAM_ID,
+  ChangeLogEventV1,
+  deserializeChangeLogEventV1,
 } from "@solana/spl-account-compression";
 import {
   PROGRAM_ID as BUBBLEGUM_PROGRAM_ID,
   MetadataArgs,
-  computeCreatorHash,
-  computeDataHash,
   createCreateTreeInstruction,
   createMintToCollectionV1Instruction,
+  getLeafAssetId
 } from "@metaplex-foundation/mpl-bubblegum";
 import {
   PROGRAM_ID as TOKEN_METADATA_PROGRAM_ID,
@@ -28,6 +31,10 @@ import {
   createCreateMasterEditionV3Instruction,
   createSetCollectionSizeInstruction,
 } from "@metaplex-foundation/mpl-token-metadata";
+import { WrapperConnection } from "./WrapperConnection";
+import * as bs58 from 'bs58';
+import { BN } from "bn.js";
+import axios from "axios";
 
 /*
   Helper function to create a merkle tree on chain, including allocating 
@@ -250,7 +257,7 @@ export async function createCollection(
  * Mint a single compressed NFTs to any address
  */
 export async function mintCompressedNFT(
-  connection: Connection,
+  connection: WrapperConnection | Connection,
   payer: Keypair,
   treeAddress: PublicKey,
   collectionMint: PublicKey,
@@ -346,10 +353,66 @@ export async function mintCompressedNFT(
 
     console.log("\nSuccessfully minted the compressed NFT!");
 
-    return txSignature;
+    // get asset Id
+    const txData = await connection.getTransaction(txSignature, {
+      maxSupportedTransactionVersion: 0,
+    });
+    console.log("txData", txData);
+    const events = getAllChangeLogEventV1FromTransaction(txData);
+    console.log(events);
+    // compute the assetId of the compressed nft just minted
+    const assetId = await getLeafAssetId(events[0].treeId, new BN(events[0].index));
+    console.log(assetId);
+
+    return assetId;
   } catch (err) {
     console.error("\nFailed to mint compressed NFT:", err);
 
     throw err;
   }
+}
+
+/**
+ * Helper function to extract the all ChangeLogEventV1 emitted in a transaction
+ * @param txResponse - Transaction response from `@solana/web3.js`
+ * @param noopProgramId - program id of the noop program used (default: `SPL_NOOP_PROGRAM_ID`)
+ * @returns
+ */
+export function getAllChangeLogEventV1FromTransaction(
+  txResponse: TransactionResponse | VersionedTransactionResponse,
+  noopProgramId: PublicKey = SPL_NOOP_PROGRAM_ID
+): ChangeLogEventV1[] {
+  // ensure a transaction response was provided
+  if (!txResponse) throw Error("No txResponse provided");
+
+  // flatten the array of all account keys (e.g. static, readonly, writable)
+  const accountKeys = txResponse.transaction.message
+    .getAccountKeys()
+    .keySegments()
+    .flat();
+
+  let changeLogEvents: ChangeLogEventV1[] = [];
+
+  // locate and parse noop instruction calls via cpi (aka inner instructions)
+  txResponse!.meta?.innerInstructions?.forEach((compiledIx) => {
+    compiledIx.instructions.forEach((innerIx) => {
+      // only attempt to parse noop instructions
+      if (
+        noopProgramId.toBase58() !==
+        accountKeys[innerIx.programIdIndex].toBase58()
+      )
+        return;
+
+      try {
+        // try to deserialize the cpi data as a changelog event
+        changeLogEvents.push(
+          deserializeChangeLogEventV1(Buffer.from(bs58.decode(innerIx.data)))
+        );
+      } catch (__) {
+        // this noop cpi is not a changelog event. do nothing with it.
+      }
+    });
+  });
+
+  return changeLogEvents;
 }

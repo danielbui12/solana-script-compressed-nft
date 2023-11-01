@@ -1,81 +1,80 @@
 import * as anchor from "@coral-xyz/anchor";
 import { confirmTx, decode, mapProof, mintCNft } from "../utils/utils";
-import { CnftVault } from "../target/types/cnft_vault";
 import { PROGRAM_ID as BUBBLEGUM_PROGRAM_ID } from "@metaplex-foundation/mpl-bubblegum";
 import {
   SPL_ACCOUNT_COMPRESSION_PROGRAM_ID,
   SPL_NOOP_PROGRAM_ID,
 } from "@solana/spl-account-compression";
-import { WrapperConnection } from "../utils/WrapperConnection";
-import { createCollection } from "../utils/compression";
-import { program, keypair as payer, provider } from "./scripts/constants";
+import { program, keypair as payer, connection } from "./scripts/constants";
 require('dotenv').config();
 
 describe("cNFT Vault", () => {
-  let assetId: anchor.web3.PublicKey,
-    tree: anchor.web3.PublicKey;
+  let assetId: anchor.web3.PublicKey = new anchor.web3.PublicKey("5JsHK1g3aCLAe4zpUjPWQYfjqEAwpu47pLAZqnTZmVf9"),
+    tree: anchor.web3.PublicKey = new anchor.web3.PublicKey("2hEaLERcyKXfEy1XK18KeP5Cmaox9szwJVZcvo6ayE19");
 
   const [vaultPDA, _bump] = anchor.web3.PublicKey.findProgramAddressSync(
     [Buffer.from("cNFT-vault", "utf8")],
     program.programId
   );
+  console.log("vaultPDA", vaultPDA);
 
-  before(async () => { 
-    let fromAirdropSignature = await provider.connection.requestAirdrop(
-      payer.publicKey,
-      5 * anchor.web3.LAMPORTS_PER_SOL,
-    )
-    await confirmTx(provider.connection, fromAirdropSignature);
-  })
+  // before(async () => { 
+  //   let fromAirdropSignature = await connection.requestAirdrop(
+  //     payer.publicKey,
+  //     5 * anchor.web3.LAMPORTS_PER_SOL,
+  //   )
+  //   await confirmTx(connection, fromAirdropSignature);
+  // })
+  
+  // it("Mint cNFT to vaultPDA", async () => { 
+  //   const nftData = await mintCNft(vaultPDA);
+  //   tree = nftData.tree.treeAddress;
+  //   assetId = nftData.assetId;
+  // })
 
-  it("Mint cNFT to vaultPDA", async () => { 
-    const nftData = await mintCNft(vaultPDA);
-    tree = nftData.tree.treeAddress;
-  })
+  it("Withdraw a cNFT!", async () => {
+    // we expect the cNFT to already be in the vault
+    // you can send it there (to vaultPDA) using any regular wallet
+    // the cNFT has the following asset id
+    // and is compressed in the following tree
 
-  // it("Withdraw a cNFT!", async () => {
-  //   // we expect the cNFT to already be in the vault
-  //   // you can send it there (to vaultPDA) using any regular wallet
-  //   // the cNFT has the following asset id
-  //   // and is compressed in the following tree
+    const receiver = payer.publicKey; // you can define any pubkey as the receiver here
 
-  //   const receiver = payer.publicKey; // you can define any pubkey as the receiver here
+    const [treeAuthority, _bump2] =
+      anchor.web3.PublicKey.findProgramAddressSync(
+        [tree.toBuffer()],
+        BUBBLEGUM_PROGRAM_ID
+      );
 
-  //   const [treeAuthority, _bump2] =
-  //     anchor.web3.PublicKey.findProgramAddressSync(
-  //       [tree.toBuffer()],
-  //       BUBBLEGUM_PROGRAM_ID
-  //     );
+    const asset = await connection.getAsset(assetId);
 
-  //   const asset = await wrapperConnection.getAsset(new anchor.web3.PublicKey(assetId));
+    const proof = await connection.getAssetProof(assetId);
+    const proofPathAsAccounts = mapProof(proof);
 
-  //   const proof = await wrapperConnection.getAssetProof(new anchor.web3.PublicKey(assetId));
-  //   const proofPathAsAccounts = mapProof(proof);
+    const root = decode(proof.root);
+    const dataHash = decode(asset.compression.data_hash);
+    const creatorHash = decode(asset.compression.creator_hash);
+    const nonce = new anchor.BN(asset.compression.leaf_id);
+    const index = asset.compression.leaf_id;
 
-  //   const root = decode(proof.root);
-  //   const dataHash = decode(asset.compression.data_hash);
-  //   const creatorHash = decode(asset.compression.creator_hash);
-  //   const nonce = new anchor.BN(asset.compression.leaf_id);
-  //   const index = asset.compression.leaf_id;
+    const sx = await program.methods
+      .withdrawCnft(root, dataHash, creatorHash, nonce, index)
+      .accounts({
+        leafOwner: vaultPDA,
+        merkleTree: tree,
+        newLeafOwner: receiver,
+        treeAuthority: treeAuthority,
+        bubblegumProgram: BUBBLEGUM_PROGRAM_ID,
+        compressionProgram: SPL_ACCOUNT_COMPRESSION_PROGRAM_ID,
+        logWrapper: SPL_NOOP_PROGRAM_ID,
+        systemProgram: anchor.web3.SystemProgram.programId,
+      })
+      .remainingAccounts(proofPathAsAccounts)
+      .rpc();
 
-  //   const sx = await program.methods
-  //     .withdrawCnft(root, dataHash, creatorHash, nonce, index)
-  //     .accounts({
-  //       leafOwner: vaultPDA,
-  //       merkleTree: tree,
-  //       newLeafOwner: receiver,
-  //       treeAuthority: treeAuthority,
-  //       bubblegumProgram: BUBBLEGUM_PROGRAM_ID,
-  //       compressionProgram: SPL_ACCOUNT_COMPRESSION_PROGRAM_ID,
-  //       logWrapper: SPL_NOOP_PROGRAM_ID,
-  //       systemProgram: anchor.web3.SystemProgram.programId,
-  //     })
-  //     .remainingAccounts(proofPathAsAccounts)
-  //     .rpc();
-
-  //   console.log("Success!");
-  //   console.log(`   Tx Signature: ${sx}`);
-  // });
+    console.log("Success!");
+    console.log(`   Tx Signature: ${sx}`);
+  });
 
   // it("Withdraw two cNFTs!", async () => {
   //   // TODO change all of these to your values

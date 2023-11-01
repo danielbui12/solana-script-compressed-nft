@@ -12,7 +12,8 @@ cnft_vault = "4grkXgo3Y4wBv5gFT4b9rhhhDaFsTPUqB92a2JAgHgkW"
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "localnet"
+# cluster = "localnet"
+cluster = "devnet"
 wallet = "/home/tung/Downloads/wallet-keypair.json"
 
 [scripts]

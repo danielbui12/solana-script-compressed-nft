@@ -122,7 +122,7 @@ export const mintCNft = async (receiver: PublicKey) => {
   // fully mint a single compressed NFT
   console.log(`Minting a single compressed NFT to ${receiver.toBase58()}...`);
 
-  const mintToWalletTx = await mintCompressedNFT(
+  const assetId = await mintCompressedNFT(
     connection,
     payer,
     tree.treeAddress, // treeAddress,
@@ -133,16 +133,11 @@ export const mintCNft = async (receiver: PublicKey) => {
     // mint to this specific wallet (in this case, airdrop to `testWallet`)
     receiver,
   );
-  console.log('mintToWalletTx', mintToWalletTx);
-
-  const slot = await connection.getSlot()
-  const block = await connection.getBlock(slot);
-  console.log('mint cnft transaction:', block.transactions[0]);
 
   return {
     tree,
     collection,
-    // asset:
+    assetId,
   }
 };
 

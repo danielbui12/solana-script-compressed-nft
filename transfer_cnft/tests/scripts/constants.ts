@@ -6,7 +6,7 @@ import { WrapperConnection } from "../../utils/WrapperConnection";
 require('dotenv').config();
 
 export const connection = new WrapperConnection(
-  "http://127.0.0.1:8899"
+  process.env.RPC_URL
 );
 export const keypair = loadWalletKey(process.env.KEYPAIR_PATH);
 export const wallet = new anchor.Wallet(keypair);

@@ -1,0 +1,2 @@
+RPC_URL=http://127.0.0.1:8899
+KEYPAIR_PATH=/home/tung/Downloads/wallet-keypair.json
